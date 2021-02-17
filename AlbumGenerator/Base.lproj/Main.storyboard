@@ -27,13 +27,21 @@
                                     <outletCollection property="gestureRecognizers" destination="EYA-YF-fcc" appends="YES" id="rNN-vO-4Lk"/>
                                 </connections>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZpS-iS-StD">
-                                <rect key="frame" x="20" y="259" width="374" height="21"/>
-                                <accessibility key="accessibilityConfiguration" identifier="bandLabel" label="bandLabel"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="15" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZpS-iS-StD">
+                                <rect key="frame" x="0.0" y="246" width="374" height="0.0"/>
+                                <accessibility key="accessibilityConfiguration" identifier="bandLabel"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                                <color key="shadowColor" systemColor="labelColor"/>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <size key="shadowOffset" width="2" height="2"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iyN-cY-Any">
+                                <rect key="frame" x="20" y="660" width="374" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <size key="shadowOffset" width="2" height="2"/>
                             </label>
                         </subviews>
@@ -43,14 +51,18 @@
                             <constraint firstItem="QqD-QO-AB8" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="2nb-Iq-ZHy"/>
                             <constraint firstItem="ZpS-iS-StD" firstAttribute="leading" secondItem="QqD-QO-AB8" secondAttribute="leading" id="BDC-nI-Btx"/>
                             <constraint firstItem="ZpS-iS-StD" firstAttribute="width" secondItem="QqD-QO-AB8" secondAttribute="width" multiplier="0.903382" id="F5d-fb-nCH"/>
+                            <constraint firstItem="iyN-cY-Any" firstAttribute="leading" secondItem="QqD-QO-AB8" secondAttribute="leading" constant="20" id="K1z-3D-HAi"/>
                             <constraint firstItem="QqD-QO-AB8" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" id="Ne1-SE-U1a"/>
                             <constraint firstItem="ZpS-iS-StD" firstAttribute="top" secondItem="QqD-QO-AB8" secondAttribute="top" id="ieV-bm-iB9"/>
                             <constraint firstItem="QqD-QO-AB8" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="width" id="rp2-VO-pYV"/>
                             <constraint firstItem="QqD-QO-AB8" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="tO3-Vo-ra2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="iyN-cY-Any" secondAttribute="bottom" constant="202" id="uY4-Wh-9og"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iyN-cY-Any" secondAttribute="trailing" constant="20" id="x8p-PM-qE5"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="albumImage" destination="QqD-QO-AB8" id="Kpt-GL-Vrz"/>
+                        <outlet property="albumName" destination="iyN-cY-Any" id="sgo-OB-bbB"/>
                         <outlet property="bandName" destination="ZpS-iS-StD" id="8qj-3M-iE0"/>
                     </connections>
                 </viewController>
@@ -65,9 +77,6 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

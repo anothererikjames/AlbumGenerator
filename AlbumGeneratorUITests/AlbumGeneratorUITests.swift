@@ -47,8 +47,7 @@ class AlbumGeneratorUITests: XCTestCase {
 
     func testBandNameLoads() {
         let bandName = XCUIApplication().staticTexts["bandLabel"]
-        let label = bandName.label.va as? UILabel
-       
+        
         XCTAssertEqual(bandName.label, "This is a test")
     }
 }
