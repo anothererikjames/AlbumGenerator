@@ -12,6 +12,10 @@ class AlbumGeneratorUITests: XCTestCase {
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
 
+        let app = XCUIApplication()
+        app.launchArguments = ["uiTestMode"]
+        app.launch()
+        
         // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
 
@@ -22,21 +26,29 @@ class AlbumGeneratorUITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
+    func testImagesLoad() throws {
         // UI tests must launch the application that they test.
-        let app = XCUIApplication()
-        app.launch()
+        let image = XCUIApplication().windows.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .image).element
+        
+        
+        let myImage = XCUIApplication().images["albumImage"]
+        let screenshotBefore = myImage.screenshot()
+        
+        image.tap()
+        
+        //...
+        //do some actions that change the image being displayed
+        //...
+        let screenshotAfter = myImage.screenshot()
 
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        //Validating that the image changed as intended
+        XCTAssertNotEqual(screenshotBefore.pngRepresentation, screenshotAfter.pngRepresentation)
     }
 
-    func testLaunchPerformance() throws {
-        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, *) {
-            // This measures how long it takes to launch your application.
-            measure(metrics: [XCTApplicationLaunchMetric()]) {
-                XCUIApplication().launch()
-            }
-        }
+    func testBandNameLoads() {
+        let bandName = XCUIApplication().staticTexts["bandLabel"]
+        let label = bandName.label.va as? UILabel
+       
+        XCTAssertEqual(bandName.label, "This is a test")
     }
 }

@@ -34,3 +34,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+extension UIApplication {
+    public static var isRunningTest: Bool {
+        return ProcessInfo().arguments.contains("uiTestMode")
+    }
+}
+
