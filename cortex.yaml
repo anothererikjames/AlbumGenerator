@@ -1,0 +1,26 @@
+info:
+  description: null
+  license:
+    name: MIT
+  title: album-generator
+  version: 1.0.0
+  x-cortex-links:
+    - name: Load Balancer Logs (profile-management)
+      type: logs
+      description: Access and error logs for the nginx load balancer
+    - name: Design Document (Architecture)
+      type: documentation
+      description: presented at Arch Review 19/Jan/23
+    - name: Grafana Dashboard - prod
+      type: dashboard
+    - name: Grafana Dashboard - staging
+      type: dashboard
+      description: Developer staging environment for profile-management
+    - name: Production logs
+      type: logs
+      description: Datadog query for logs from all prod hosts
+  x-cortex-tag: profile-management
+  x-cortex-git:
+    github:
+      repository: anothererikjames/AlbumGenerator
+openapi: 3.0.0
